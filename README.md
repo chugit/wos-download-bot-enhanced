@@ -56,7 +56,9 @@ Web of Science Core Collection 批量导出助手（油猴脚本增强版）
 - [篡改猴](https://www.crxsoso.com/webstore/detail/dhdgffkkebhmkfjojejmpbldmpobfkfo)
 
 ### 2. 安装脚本
-将仓库中的js脚本文件导入油猴扩展，或使用发布后的安装链接。
+将仓库中的脚本文件 [wos-download-bot-enhanced.js](https://github.com/chugit/wos-download-bot-enhanced/blob/main/wos-download-bot-enhanced.js) 导入油猴扩展，或使用Greasy Fork上发布的安装链接。
+
+- [Greasy Fork安装链接](https://update.greasyfork.org/scripts/570760/WOS%20Download%20Bot%20Enhanced.user.js)
 
 ---
 
@@ -158,7 +160,10 @@ Web of Science Core Collection 批量导出助手（油猴脚本增强版）
 
 导出的文件名类似：
 
-```text
-wos_{sort}_{qid}_{start}-{stop}.{ext}
+`wos_{sort}_{qid}_{start}-{stop}.{ext}`
 
 ![](Pic/5.png)
+
+## 参考
+
+- [AngelLiang/wos-download-bot](https://github.com/AngelLiang/wos-download-bot)
