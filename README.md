@@ -30,35 +30,33 @@ Web of Science Core Collection 批量导出助手（油猴脚本增强版）
 
 ## 适用页面
 
-本脚本适用于 Web of Science / Clarivate 的核心合集检索结果页，例如：
+本脚本适用于 Web of Science / Clarivate 的核心合集检索结果页，如：
 
 - `https://*.webofscience.com/wos/woscc/summary/...`
 - `https://*.clarivate.cn/wos/woscc/summary/...`
 
-也就是说，你需要先进入 **检索结果列表页**，脚本才会显示按钮并工作。
+![](Pic/2.png)
 
-安装脚本后，进入wos，通过按期刊标题搜索，进入结果页，然后刷新一下，即可在右上角看到「一键下载」按钮，点击后按提示输入下载选项，最后等待下载完成即可。
+也就是说，你需要先进入 **检索结果列表页**，脚本才会显示「一键下载」按钮并工作（看不到刷新一下）。
 
+检索结果列表页应从 Web of Science 高级检索（Advanced Search）页面形成，如：
 
+- [https://webofscience.clarivate.cn/wos/woscc/basic-search](https://webofscience.clarivate.cn/wos/woscc/basic-search)
+- [https://webofscience.clarivate.cn/wos/woscc/advanced-search](https://webofscience.clarivate.cn/wos/woscc/advanced-search)
 
-
-
+![](Pic/1.png)
 
 ---
 
 ## 安装方法
 
 ### 1. 安装油猴扩展
-任选其一：
 
-- Tampermonkey
-- Violentmonkey
+- [Tampermonkey](https://www.tampermonkey.net/)
+- [篡改猴](https://www.crxsoso.com/webstore/detail/dhdgffkkebhmkfjojejmpbldmpobfkfo)
 
 ### 2. 安装脚本
-将仓库中的脚本文件导入油猴扩展，或使用发布后的安装链接。
-
-### 3. 打开 Web of Science 检索结果页
-进入 WOS Core Collection 的结果列表页后，页面右侧会出现 **“一键下载”** 按钮。
+将仓库中的js脚本文件导入油猴扩展，或使用发布后的安装链接。
 
 ---
 
@@ -67,7 +65,7 @@ Web of Science Core Collection 批量导出助手（油猴脚本增强版）
 ### 基本流程
 
 1. 打开 Web of Science 核心合集检索结果页
-2. 等待页面加载完成
+2. 等待页面加载完成/刷新
 3. 点击右侧 **“一键下载”**
 4. 在弹窗中设置：
    - **文件格式**：RIS / BibTeX / TXT
@@ -75,6 +73,8 @@ Web of Science Core Collection 批量导出助手（油猴脚本增强版）
    - **下载间隔（秒）**
 5. 点击 **“开始下载”**
 6. 脚本会自动按 500 条一批依次导出
+
+![](Pic/3.png)
 
 ---
 
@@ -98,6 +98,8 @@ Web of Science Core Collection 批量导出助手（油猴脚本增强版）
 - **停止后会清空任务记录**
 - 下次需要重新开始
 
+![](Pic/4.png)
+
 ---
 
 ## 断点续传机制
@@ -113,7 +115,7 @@ Web of Science Core Collection 批量导出助手（油猴脚本增强版）
 
 当你刷新页面，或者重新打开同一个检索结果页时，如果检测到未完成任务，脚本会提示你是否继续。
 
-> 注意：只有当**当前页面的检索结果和排序方式与原任务一致**时，才允许恢复任务。
+> 注意：只有当 **当前页面的检索结果和排序方式与原任务一致（网址完全相同）** 时，才允许恢复任务。
 
 ---
 
@@ -145,10 +147,10 @@ Web of Science Core Collection 批量导出助手（油猴脚本增强版）
 
 ### 起始条目限制
 - 建议不要超过：**100000**
-- 推荐直接起始最大值：**99501**
-- 接口硬上限对应最大起始条目：**199501**
+- 推荐直接起始的最大值：**99501**
+- 接口硬上限对应的最大起始条目：**199501**
 
-如果你的结果量特别大，建议先拆分检索式，再分别导出。
+如果你的结果量特别大，建议先拆分（如按时间拆分），再分别导出。
 
 ---
 
@@ -158,3 +160,5 @@ Web of Science Core Collection 批量导出助手（油猴脚本增强版）
 
 ```text
 wos_{sort}_{qid}_{start}-{stop}.{ext}
+
+![](Pic/5.png)
